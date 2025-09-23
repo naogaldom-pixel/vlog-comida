@@ -7,8 +7,9 @@ body {
     color: #333;
 }
 
+/* HEADER */
 header {
-    background-color: #5bd4d0; /* Guinda */
+    background-color: #5bd4d0;
     color: white;
     text-align: center;
     padding: 1em 0;
@@ -20,12 +21,14 @@ header h1 {
     margin: 0;
 }
 
+/* NAVBAR */
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap; /* Se acomoda si no cabe */
 }
 
 nav a {
@@ -36,13 +39,17 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffcc00; /* Dorado */
+    color: #ffcc00;
 }
 
+/* MAIN CONTENT */
 main {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 20px auto;
     padding: 0 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
 }
 
 section, aside {
@@ -50,18 +57,43 @@ section, aside {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
 }
 
+/* RECETA */
 .receta {
     text-align: center;
 }
 
 .receta img {
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 
+/* TITULOS */
 h2, h3 {
     color: #2e78c1;
+}
+
+/* 📱 MEDIA QUERIES: RESPONSIVE */
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr; /* Se acomoda en una sola columna */
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Menú en columna */
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    section, aside {
+        padding: 15px;
+    }
 }
